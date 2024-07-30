@@ -1,16 +1,5 @@
-name: Lint and Commit
-on: [ push, pull_request ]
-
-jobs:
-  lint:
-    runs-on: ubuntu-latest 
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v5
-    - uses: chartboost/ruff-action@v1
-      with:
-        args: --check .
-        fix_args: --fix .
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: 'style fixes by ruff'
+  - name: Python Linter
+  # You may pin to the exact commit or the version.
+  # uses: sunnysid3up/python-linter@93076bd8f740f062069291d738fc70c1b4171c1d
+  uses: sunnysid3up/python-linter@v0.1-beta.7
+          
